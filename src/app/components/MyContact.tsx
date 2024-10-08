@@ -10,17 +10,17 @@ export default function ContactPage() {
     message: ''
   });
 
-  const handleChange = (e:any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  // const handleChange = (e:any) => {
+  //   setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
 
-  const handleSubmit = (e:any) => {
-    e.preventDefault();
-    // Handle form submission logic here
-    setFormStatus('Message sent successfully! I\'ll get back to you soon.');
-    // Reset form after submission
-    setFormData({ name: '', email: '', message: '' });
-  };
+  // const handleSubmit = (e:any) => {
+  //   e.preventDefault();
+  //   // Handle form submission logic here
+  //   setFormStatus('Message sent successfully! I\'ll get back to you soon.');
+  //   // Reset form after submission
+  //   setFormData({ name: '', email: '', message: '' });
+  // };
 
   return (
     <>
