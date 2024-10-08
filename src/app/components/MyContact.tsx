@@ -10,11 +10,11 @@ export default function ContactPage() {
     message: ''
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e:any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     // Handle form submission logic here
     setFormStatus('Message sent successfully! I\'ll get back to you soon.');
