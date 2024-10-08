@@ -3,12 +3,12 @@ import { useState } from 'react';
 
 
 export default function ContactPage() {
-  const [formStatus, setFormStatus] = useState('');
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
+  // const [formStatus, setFormStatus] = useState('');
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   email: '',
+  //   message: ''
+  // });
 
   // const handleChange = (e:any) => {
   //   setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -35,8 +35,8 @@ export default function ContactPage() {
                 type="text"
                 id="name"
                 name="name"
-                value={formData.name}
-                onChange={handleChange}
+                // value={formData.name}
+                // onChange={handleChange}
                 className="w-full pb-2 bg-transparent border-b-2 border-text_one focus:outline-none focus:border-second_Bc transition-colors peer"
                 required
                 placeholder=" "
@@ -55,8 +55,8 @@ export default function ContactPage() {
                 type="email"
                 id="email"
                 name="email"
-                value={formData.email}
-                onChange={handleChange}
+                // value={formData.email}
+                // onChange={handleChange}
                 className="w-full pb-2 bg-transparent border-b-2 border-text_one focus:outline-none focus:border-second_Bc transition-colors peer"
                 required
                 placeholder=" "
@@ -75,8 +75,8 @@ export default function ContactPage() {
                 id="message"
                 name="message"
                 rows="4"
-                value={formData.message}
-                onChange={handleChange}
+                // value={formData.message}
+                // onChange={handleChange}
                 className="w-full pb-2 bg-transparent border-b-2 border-text_one focus:outline-none focus:border-second_Bc transition-colors peer resize-none"
                 required
                 placeholder=" "
@@ -97,11 +97,11 @@ export default function ContactPage() {
               Send Message
             </button>
           </form>
-          {formStatus && (
+          {/* {formStatus && (
             <p className="text-second_Bc mt-4 text-center animate-fade-in-down font-medium">
               {formStatus}
             </p>
-          )}
+          )} */}
         </div>
       </section>
     </>
