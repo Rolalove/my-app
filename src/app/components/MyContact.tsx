@@ -1,5 +1,5 @@
-"use client"
-import { useState } from 'react';
+// "use client"
+// import { useState } from 'react';
 
 
 export default function ContactPage() {
@@ -29,7 +29,7 @@ export default function ContactPage() {
         <div className="w-full max-w-lg">
           <h2 className="text-3xl font-bold text-text_one mb-2 text-center">Let&apos;s Connect</h2>
           <p className="text-center text-text_one mb-8">I&apos;m always open to new opportunities and collaborations. Feel free to reach out!</p>
-          <form id="contactForm" onSubmit={handleSubmit} className="space-y-6 bg-white bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg">
+          <form id="contactForm"  className="space-y-6 bg-white bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg">
             <div className="relative">
               <input
                 type="text"
