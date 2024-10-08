@@ -74,7 +74,7 @@ export default function ContactPage() {
               <textarea
                 id="message"
                 name="message"
-                rows="4"
+                // rows="4"
                 // value={formData.message}
                 // onChange={handleChange}
                 className="w-full pb-2 bg-transparent border-b-2 border-text_one focus:outline-none focus:border-second_Bc transition-colors peer resize-none"
