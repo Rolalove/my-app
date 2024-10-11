@@ -2,20 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
-.right {
-
-  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+.nav-item{
+  color: white;
+}
+.nav-item:hover{
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+.nav-item:active{
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  color: black;
+  font-weight: bold;
 
 }
 
-@media (max-width: 768px) {
-
+@media (min-width: 1024px) {
   .right {
-
-    clip-path: none;
-
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
   }
-
 }
-

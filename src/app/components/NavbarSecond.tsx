@@ -8,7 +8,7 @@ function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="w-full fixed top-0 z-50 px-4 py-2">
+    <header className="w-full fixed top-0 z-50 px-4 py-2 mt-3">
       <nav className="container mx-auto bg-first_Bc bg-opacity-80 backdrop-blur-sm rounded-full shadow-md">
         <div className="flex justify-between items-center px-6 py-3">
           <p className="text-second_Bc italic font-extrabold text-xl sm:text-2xl">Roladev</p>

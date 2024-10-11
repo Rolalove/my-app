@@ -25,8 +25,8 @@ export default function ContactPage() {
   return (
     <>
       
-      <section className="pt-20  min-h-screen bg-first_Bc flex items-center justify-center px-4">
-        <div className="w-full max-w-lg">
+      <section className=" bg-first_Bc mx-auto container px-4">
+        <div className="mt-32 lg:w-1/2 lg:mx-auto">
           <h2 className="text-3xl font-bold text-text_one mb-2 text-center">Let&apos;s Connect</h2>
           <p className="text-center text-text_one mb-8">I&apos;m always open to new opportunities and collaborations. Feel free to reach out!</p>
           <form id="contactForm"  className="space-y-6 bg-white bg-opacity-50 backdrop-blur-sm p-8 rounded-lg shadow-lg">

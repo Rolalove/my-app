@@ -2,20 +2,20 @@ import { Icon } from "@iconify/react";
 function Myskills() {
   return (
     <section className=" ">
-      <main className="h-[100vh] w-[100%] gap-x-4   flex">
-        <section className="w-[45%] my-auto py-3 item-center px-8 container mx-auto">
-          <p className="font-medium text-2xl text-center mx-auto px-6 hover:animate-shake">
+      <main className="h-[100vh] w-[100%] mt-20  lg:mt-0 gap-x-4 lg:flex">
+        <section className="w-full px-4  lg:w-[45%] lg:my-auto lg:py-3 lg:item-center lg:px-8 container lg:mx-auto">
+          <p className="font-medium text-2xl lg:text-center lg:mx-auto lg:px-6 hover:animate-shake">
             My skillset encompasses a variety of frontend tools and frameworks
           </p>
-          <p className="text-[18px] text-sm mt-2 text-center px-8">
+          <p className="  text-sm mt-2 lg:text-center lg:px-8">
             Blueprinting and building the future of the web, one line of code at
             a time. Specializing in crafting scalable, responsive, and intuitive
             interfaces that stand the test of time and technology.{" "}
           </p>
         </section>
 
-        <section className="w-[60%] right bg-second_Bc ">
-          <ul className=" mt-24  py-2 px-2">
+        <section className="w-full lg:w-[60%] right lg:bg-second_Bc ">
+          <ul className="mt-10 lg:mt-24  py-2 px-2">
             <div className="flex justify-center gap-x-4 mb-2">
               <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 shadow-md hover:scale-95 transition-transform duration-200 ease-in-out">
                 <Icon
