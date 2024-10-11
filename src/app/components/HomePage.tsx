@@ -1,13 +1,11 @@
 import Link from "next/link"
 import Image from 'next/image';
-import NavBar from './NavBar';
 import { Icon } from "@iconify/react";
 
 function HomePage() {
     return(
         <>
             <section className="">
-              <NavBar/>
             <div className="mt-12 lg:mt-0 lg:flex-1 lg:flex">
                 <div className="h-[100vh] w-full lg:w-[45%] bg-first_Bc text-text_one">
                     <div className="lg:grid lg:h-full lg:place-items-center">
