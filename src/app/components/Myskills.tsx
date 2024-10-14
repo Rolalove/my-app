@@ -1,99 +1,48 @@
 import { Icon } from "@iconify/react";
+
 function Myskills() {
+  const skills = [
+    { icon: "vscode-icons:file-type-html", name: "HTML" },
+    { icon: "vscode-icons:file-type-css", name: "CSS" },
+    { icon: "logos:javascript", name: "JavaScript" },
+    { icon: "devicon:git", name: "Git" },
+    { icon: "logos:react", name: "React" },
+    { icon: "devicon:tailwindcss", name: "TailwindCSS" },
+    { icon: "logos:vue", name: "Vue" },
+    { icon: "logos:typescript-icon", name: "TypeScript" },
+    { icon: "skill-icons:nextjs-light", name: "Next.js" },
+    { icon: "skill-icons:nuxtjs-light", name: "Nuxt.js" }
+  ];
+
   return (
-    <section className=" ">
-      <main className="h-[100vh] w-[100%] mt-20  lg:mt-0 gap-x-4 lg:flex">
-        <section className="w-full px-4  lg:w-[45%] lg:my-auto lg:py-3 lg:item-center lg:px-8 container lg:mx-auto">
-          <p className="font-medium text-2xl lg:text-center lg:mx-auto lg:px-6 hover:animate-shake">
-            My skillset encompasses a variety of frontend tools and frameworks
-          </p>
-          <p className="  text-sm mt-2 lg:text-center lg:px-8">
-            Blueprinting and building the future of the web, one line of code at
-            a time. Specializing in crafting scalable, responsive, and intuitive
-            interfaces that stand the test of time and technology.{" "}
-          </p>
+    <section className="min-h-screen flex flex-col lg:flex-row">
+      <main className="flex-grow flex flex-col lg:flex-row mt-28 lg:mt-0">
+        <section className="w-full px-4 lg:w-[45%] flex items-center justify-center">
+          <div className="lg:max-w-md">
+            <p className="font-medium text-2xl text-center lg:text-left lg:px-6 hover:animate-shake">
+              My skillset encompasses a variety of frontend tools and frameworks
+            </p>
+            <p className="text-sm mt-2 text-center lg:text-left lg:px-6">
+              Blueprinting and building the future of the web, one line of code at
+              a time. Specializing in crafting scalable, responsive, and intuitive
+              interfaces that stand the test of time and technology.
+            </p>
+          </div>
         </section>
 
-        <section className="w-full lg:w-[60%] right lg:bg-second_Bc ">
-          <ul className="mt-10 lg:mt-24  py-2 px-2">
-            <div className="flex justify-center gap-x-4 mb-2">
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 shadow-md hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon
-                  className="w-[35px] h-[35px]"
-                  icon="vscode-icons:file-type-html"
-                />
-                <p className=" text-[20px]">HTML</p>
+        <section className="w-full right lg:w-[55%] lg:bg-second_Bc flex items-center justify-center py-8 lg:py-0">
+          <ul className="grid grid-cols-2 gap-4 p-4">
+            {skills.map((skill, index) => (
+              <li key={index} className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 shadow-md hover:scale-95 transition-transform duration-200 ease-in-out">
+                <Icon className="w-[35px] h-[35px]" icon={skill.icon} />
+                <p className="text-[20px]">{skill.name}</p>
               </li>
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon
-                  className="w-[35px] h-[35px]"
-                  icon="vscode-icons:file-type-css"
-                />
-                <p className=" text-[20px]">CSS</p>
-              </li>
-            </div>
-
-            <div className="flex justify-center gap-x-4 mb-2">
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon className="w-[35px] h-[35px]" icon="logos:javascript" />
-                <p className="text-[20px]">JavaScript</p>
-              </li>
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon className="w-[35px] h-[35px]" icon="devicon:git" />
-                <p className="text-[20px]">Git</p>
-              </li>
-            </div>
-
-            <div className="flex justify-center gap-x-4 mb-2">
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon className="w-[35px] h-[35px]" icon="logos:react" />
-                <p className="text-[20px]">React</p>
-              </li>
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon
-                  className="w-[35px] h-[35px]"
-                  icon="devicon:tailwindcss"
-                />
-                <p className="text-[20px]">TailwindCSS</p>
-              </li>
-            </div>
-
-            <div className="flex justify-center gap-x-4 mb-2">
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon className="w-[35px] h-[35px]" icon="logos:vue" />
-                <p className="text-[20px]">Vue</p>
-              </li>
-
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon
-                  className="w-[35px] h-[35px]"
-                  icon="logos:typescript-icon"
-                />
-                <p className="text-[20px]">TypeScript</p>
-              </li>
-            </div>
-
-            <div className="flex justify-center gap-x-4 mb-2">
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon
-                  className="w-[35px] h-[35px]"
-                  icon="skill-icons:nextjs-light"
-                />
-                <p className="text-[20px]">Next.js</p>
-              </li>
-
-              <li className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon
-                  className="w-[35px] h-[35px]"
-                  icon="skill-icons:nuxtjs-light"
-                />
-                <p className="text-[20px]">Nuxt.js</p>
-              </li>
-            </div>
+            ))}
           </ul>
         </section>
       </main>
     </section>
   );
 }
+
 export default Myskills;

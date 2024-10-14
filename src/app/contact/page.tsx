@@ -1,12 +1,12 @@
 import MyContact from "../components/MyContact";
-import NavbarSecond from "../components/NavbarSecond";
+import NavBar from "../components/NavBar";
 
 
 
 export default function contact() {
   return (
     <div>
-        <NavbarSecond/>
+        <NavBar/>
        <MyContact/>
     </div>
   );
