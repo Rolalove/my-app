@@ -12,12 +12,12 @@ function Navbar() {
   const navItems = [
     { href: "/", label: "About Me" },
     { href: "/skills", label: "Skills" },
-    { href: "/project", label: "Project" },
+    { href: "/projects", label: "Projects" },
     { href: "/contact", label: "Contact" },
   ];
 
   const linkClasses = (href: string) =>
-    `text-[F2F2F2] hover:underline hover:decoration-wavy transition-all duration-300
+    `text-white-600 hover:underline hover:decoration-wavy transition-all duration-300
     ${
       pathname === href ? "underline decoration-wavy text-black font-bold" : ""
     }`;
