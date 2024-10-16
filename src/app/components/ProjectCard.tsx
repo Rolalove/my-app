@@ -14,35 +14,35 @@ type ProjectCardProps = {
   tags: string[];
 };
 
-type frameworkIcons = {
-    React: {
-        icon: string;
-        color: string;
-    };
-    Vue: {
-        icon: string;
-        color: string;
-    };
-    Angular: {
-        icon: string;
-        color: string;
-    };
-    'Next.js': {
-        icon: string;
-        color: string;
-    };
-    'Nuxt.js': {
-        icon: string;
-        color: string;
-    }
-}
-const frameworkIcons = {
-  React: { icon: 'logos:react', color: 'text-blue-500' },
-  Vue: { icon: 'logos:vue', color: 'text-green-500' },
-  Angular: { icon: 'logos:angular-icon', color: 'text-red-500' },
-  'Next.js': { icon: 'logos:nextjs-icon', color: 'text-black' },
-  'Nuxt.js': {icon: 'skill-icons:nuxtjs-dark', color: 'text-black' },
-};
+// type frameworkIcons = {
+//     React: {
+//         icon: string;
+//         color: string;
+//     };
+//     Vue: {
+//         icon: string;
+//         color: string;
+//     };
+//     Angular: {
+//         icon: string;
+//         color: string;
+//     };
+//     'Next.js': {
+//         icon: string;
+//         color: string;
+//     };
+//     'Nuxt.js': {
+//         icon: string;
+//         color: string;
+//     }
+// }
+// const frameworkIcons = {
+//   React: { icon: 'logos:react', color: 'text-blue-500' },
+//   Vue: { icon: 'logos:vue', color: 'text-green-500' },
+//   Angular: { icon: 'logos:angular-icon', color: 'text-red-500' },
+//   'Next.js': { icon: 'logos:nextjs-icon', color: 'text-black' },
+//   'Nuxt.js': {icon: 'skill-icons:nuxtjs-dark', color: 'text-black' },
+// };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   name,
@@ -71,9 +71,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <h3 className="text-xl font-bold mb-2 flex items-center">
             {name}
             <span className="ml-2">
-              {frameworkIcons[framework] && (
+              {/* {frameworkIcons[framework] && (
                 <Icon icon={frameworkIcons[framework].icon} className={frameworkIcons[framework].color} width="24" height="24" />
-              )}
+              )} */}
             </span>
           </h3>
           <p className="text-gray-600 mb-2 text-sm">{framework}</p>
