@@ -1,7 +1,7 @@
-'use client'
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { Icon } from '@iconify/react';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import { Icon } from "@iconify/react";
 
 type ProjectCardProps = {
   name: string;
@@ -10,39 +10,11 @@ type ProjectCardProps = {
   liveLink: string;
   image: string;
   shortDescription: string;
-  fullDescription: string;
+  technologyStack: string[];
+  keyFeatures: string[];
+  overview: string;
   tags: string[];
 };
-
-// type frameworkIcons = {
-//     React: {
-//         icon: string;
-//         color: string;
-//     };
-//     Vue: {
-//         icon: string;
-//         color: string;
-//     };
-//     Angular: {
-//         icon: string;
-//         color: string;
-//     };
-//     'Next.js': {
-//         icon: string;
-//         color: string;
-//     };
-//     'Nuxt.js': {
-//         icon: string;
-//         color: string;
-//     }
-// }
-// const frameworkIcons = {
-//   React: { icon: 'logos:react', color: 'text-blue-500' },
-//   Vue: { icon: 'logos:vue', color: 'text-green-500' },
-//   Angular: { icon: 'logos:angular-icon', color: 'text-red-500' },
-//   'Next.js': { icon: 'logos:nextjs-icon', color: 'text-black' },
-//   'Nuxt.js': {icon: 'skill-icons:nuxtjs-dark', color: 'text-black' },
-// };
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   name,
@@ -51,7 +23,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   liveLink,
   image,
   shortDescription,
-  fullDescription,
+  technologyStack,
+  keyFeatures,
+  overview,
   tags,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -71,16 +45,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           <h3 className="text-xl font-bold mb-2 flex items-center">
             {name}
             <span className="ml-2">
-              {/* {frameworkIcons[framework] && (
-                <Icon icon={frameworkIcons[framework].icon} className={frameworkIcons[framework].color} width="24" height="24" />
-              )} */}
+              {/* Framework icon can be added here if needed */}
             </span>
           </h3>
           <p className="text-gray-600 mb-2 text-sm">{framework}</p>
-          <p className="text-gray-700 mb-4 text-sm line-clamp-3">{shortDescription}</p>
+          <p className="text-gray-700 mb-4 text-sm line-clamp-3">
+            {shortDescription}
+          </p>
           <div className="flex flex-wrap gap-2 mb-4">
             {tags.map((tag, index) => (
-              <span key={index} className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs">
+              <span
+                key={index}
+                className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs"
+              >
                 {tag}
               </span>
             ))}
@@ -126,19 +103,45 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
               </button>
             </div>
             <div className="mb-4">
-              <Image className='contain md:cover'
+              <Image
                 src={image}
                 alt={`Screenshot of ${name}`}
                 width={600}
                 height={300}
                 layout="responsive"
-                
+                className="contain md:cover"
               />
             </div>
-            <p className="text-gray-700 mb-4">{fullDescription}</p>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold mb-2">Overview</h3>
+              <p className="text-gray-700">{overview}</p>
+            </div>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold mb-2">Technology Stack</h3>
+              <ul className="list-disc list-inside">
+                {technologyStack.map((tech, index) => (
+                  <li key={index} className="text-gray-700">
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold mb-2">Key Features</h3>
+              <ul className="list-disc list-inside">
+                {keyFeatures.map((feature, index) => (
+                  <li key={index} className="text-gray-700">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
             <div className="flex flex-wrap gap-2 mb-4">
               {tags.map((tag, index) => (
-                <span key={index} className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs">
+                <span
+                  key={index}
+                  className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-xs"
+                >
                   {tag}
                 </span>
               ))}
@@ -164,8 +167,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           </div>
         </div>
       )}
-
-      {/* Modal code remains the same */}
     </>
   );
 };

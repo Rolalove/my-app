@@ -34,7 +34,7 @@ function Myskills() {
           <ul className="grid grid-cols-2 gap-4 p-4">
             {skills.map((skill, index) => (
               <li key={index} className="w-[163px] h-[77px] bg-[#F9FEF9] flex items-center justify-center rounded gap-x-4 shadow-md hover:scale-95 transition-transform duration-200 ease-in-out">
-                <Icon className="w-[35px] h-[35px]" icon={skill.icon} />
+                <Icon  className="w-[35px] h-[35px]" icon={skill.icon} />
                 <p className="text-[20px]">{skill.name}</p>
               </li>
             ))}
