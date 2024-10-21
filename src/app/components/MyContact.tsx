@@ -55,16 +55,20 @@ export default function ContactPage() {
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
-        throw new Error("Failed to send message");
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to send message");
       }
     } catch (error) {
       setFormStatus({
         type: "error",
-        message: "An error occurred. Please try again later.",
+        message: error instanceof Error 
+          ? error.message 
+          : "An unexpected error occurred. Please try again later.",
       });
     }
     setShowPopup(true);
   };
+
   const closePopup = () => {
     setShowPopup(false);
   };
