@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react";
 
 function HomePage() {
   return (
-    <section className="min-h-screen flex flex-col lg:flex-row">
+    <section id="about" className="min-h-screen flex flex-col lg:flex-row">
       <div className="flex-grow flex flex-col lg:flex-row">
         {/* Updated mobile-only image section with diagonal gradient and decorative element */}
         <div className="w-full lg:hidden bg-gradient-to-br from-second_Bc/20 via-first_Bc to-first_Bc flex items-center justify-center py-12 relative overflow-hidden">

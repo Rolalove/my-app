@@ -36,28 +36,74 @@ export default function ContactPage() {
     e.preventDefault();
     setFormStatus({ type: "", message: "" });
 
-    try {
-      const response = await fetch(
-        process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
-        }
-      );
+    // Validate environment variable
+    const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+    if (!endpoint) {
+      setFormStatus({
+        type: "error",
+        message: "Form submission endpoint is not configured.",
+      });
+      setShowPopup(true);
+      return;
+    }
 
-      if (response.ok) {
-        setFormStatus({
-          type: "success",
-          message: "Message sent successfully! I'll get back to you soon.",
-        });
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        const errorData = await response.json();
-        throw new Error(errorData.message || "Failed to send message");
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData),
+      });
+
+      // Check if response exists and has expected properties
+      if (!response) {
+        throw new Error("No response received from server");
       }
+
+      // Handle non-OK responses before attempting to parse JSON
+      if (!response.ok) {
+        let errorMessage = `Server responded with status: ${response.status}`;
+        
+        try {
+          // Attempt to parse error response
+          const contentType = response.headers.get("content-type");
+          if (contentType && contentType.includes("application/json")) {
+            const errorData = await response.json();
+            errorMessage = errorData.message || errorMessage;
+          } else {
+            // If not JSON, try to get text
+            const textError = await response.text();
+            errorMessage = textError || errorMessage;
+          }
+        } catch (parseError) {
+          // If parsing fails, use the status-based message
+          console.error("Error parsing response:", parseError);
+        }
+        
+        throw new Error(errorMessage);
+      }
+
+      // Try to parse successful response
+      let responseData;
+      try {
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+          responseData = await response.json();
+        }
+      } catch (parseError) {
+        console.error("Error parsing success response:", parseError);
+        
+      }
+
+      // Handle successful submission
+      setFormStatus({
+        type: "success",
+        message: responseData?.message || "Message sent successfully! I'll get back to you soon.",
+      });
+      setFormData({ name: "", email: "", message: "" });
+      
     } catch (error) {
       setFormStatus({
         type: "error",
@@ -74,8 +120,8 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="bg-first_Bc mx-auto container px-4">
-      <div className="mt-32 lg:w-1/2 lg:mx-auto">
+    <section id="contact" className="bg-first_Bc mx-auto container px-4 h-[100vh]">
+      <div className="pt-28 lg:w-1/2 lg:mx-auto">
         <h2 className="text-3xl font-bold text-text_one mb-2 text-center">
           Let&apos;s Connect
         </h2>
