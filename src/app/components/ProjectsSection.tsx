@@ -6,7 +6,7 @@ const ProjectShowcase: React.FC = () => {
       name: "ALTDEV",
       framework: "Nuxt.js",
       repoLink: "https://github.com/Rolalove/altdev",
-      liveLink: "https://altdever.vercel.app/",
+      liveLink: "https://altdever-kofoworola-shonuyis-projects.vercel.app/",
       image: "/altdev.png",
       shortDescription:
         "Altdev is a robust content platform built using Nuxt.js, a popular Vue.js framework for server-side rendering (SSR).",
