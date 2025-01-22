@@ -29,7 +29,7 @@ const ProjectShowcase: React.FC = () => {
       name: "RolaGit",
       framework: "React",
       repoLink: "https://github.com/Rolalove/rolagit",
-      liveLink: "https://rolagit.vercel.app/",
+      liveLink: "https://rolagithub.vercel.app/",
       image: "/rolasgit.png",
       shortDescription:
         "A GitHub profile viewer built with React and the GitHub API.",
