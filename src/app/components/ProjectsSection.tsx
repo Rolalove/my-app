@@ -62,7 +62,7 @@ const ProjectShowcase: React.FC = () => {
     },
     {
       name: "Ice-cream pop",
-      framework: "Next.js",
+      framework: "",
       repoLink: "https://github.com/Rolalove/ice_cream_pop",
       liveLink: "https://rolalove.github.io/ice_cream_pop/",
       image: "/ice-creampop.png",
