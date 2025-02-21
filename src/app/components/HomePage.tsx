@@ -96,7 +96,7 @@ function HomePage() {
                 className="bg-second_Bc text-white px-5 py-2 rounded-md"
                 onClick={() =>
                   window.open(
-                    "https://docs.google.com/document/d/12-fEtRpsjcAfbM5R9C8AzhY6o4YzGjPhLP2PVsbTW_s/edit?usp=sharing",
+                    "https://drive.google.com/file/d/1GKBaimQP0xMaSV3FWQGeNCV_0RHZ3x2s/view?usp=sharing",
                     "_blank"
                   )
                 }
